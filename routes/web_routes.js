@@ -16,8 +16,5 @@ routes.post('/orders',orderController().order)
 routes.post('/allorders',allOrderController().getOrders)
 routes.post('/singleorder',orderController().getSingleOrder)
 routes.post('/updateorder',allOrderController().updateOrder)
-routes.get('/status',(req,res) => {
-    res.send({status:200})
-})
 
 module.exports = routes
