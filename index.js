@@ -8,29 +8,13 @@ const http = require("http");
 const socketIo = require("socket.io");
 const Emitter = require('events')
 
-
-
 const PORT = process.env.PORT || 5000
 
 const app = express() 
 
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     next();
-//   });
-
 app.use(cors({
-    origin:'https://speedyfood.netlify.app'
+    origin:`${process.env.ENDPOINT}`
 }))
-
-
-
-// const corsOptions ={
-//     origin:
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-    
-// }
 
 mongoose.connect(process.env.DATABASE,{ 
                 useNewUrlParser: true, 
