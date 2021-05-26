@@ -20,7 +20,7 @@ const app = express()
 //   });
 
 app.use(cors({
-    origin:'https://speedyfood.netlify.app/'
+    origin:'https://speedyfood.netlify.app'
 }))
 
 
@@ -42,12 +42,6 @@ mongoose.connect(process.env.DATABASE,{
              }).catch((err) => {
                     console.log('Connection failed...')
              })
-
-
-// Global Middelwares 
-// app.use(require("cors")())
-//// "server": "nodemon index.js --ignore client"
-
 
 
 app.use(express.json())
