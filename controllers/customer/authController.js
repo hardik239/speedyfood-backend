@@ -102,10 +102,13 @@ const authController = () => {
                         ciphertext = CryptoJS.AES.encrypt(JSON.stringify({ info: 'Invalid Credentials' }),process.env.SECRET).toString()
                         return res.send(ciphertext)
                     }                    
-                }catch (error) {
-                    ciphertext = CryptoJS.AES.encrypt(JSON.stringify({error: 'Something went wrong'}),process.env.SECRET).toString()
-                    return res.send(ciphertext)
-                }
+                }catch (error) 
+                { throw error}
+                // {
+
+                //     ciphertext = CryptoJS.AES.encrypt(JSON.stringify({error: 'Something went wrong'}),process.env.SECRET).toString()
+                //     return res.send(ciphertext)
+                // }
         },
 
         async resetPassword(req,res){
